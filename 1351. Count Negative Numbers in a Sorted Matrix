@@ -9,7 +9,7 @@ public:
                 if(grid[i][j]<0){
                     c++;
                 }
-            }
+                }
         }
         return c;
     }
