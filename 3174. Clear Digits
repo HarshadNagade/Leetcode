@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string clearDigits(string s) {
+        string ans="";
+        stack<int> st;
+        for(int i:s)
+        {
+            if(i>='a' && i<='z')
+            st.push(i);
+            else
+            {
+                if(!st.empty())
+                st.pop();
+            }
+        }
+        while(!st.empty())
+        {
+            ans.push_back(st.top());
+            st.pop();
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
