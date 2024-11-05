@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int pivotInteger(int n) {
+     auto sum=(n*(n+1))>>1 ;
+     int a=0,index=1;
+     while(a<=sum)
+     {
+        a+=index;
+        if(a==(sum-a+index))
+        return index;
+        index++;
+     } 
+     return -1; 
+    }
+};
