@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size()!=t.size())
+        return false;
+        int sum1=0,sum2=0;
+        unsigned long long muls=1,mult=1;
+
+        for(int i=0;i<s.size();i++)
+        {
+            sum1+=(int)s[i];
+            muls*=(int)s[i];
+        }
+            for(int j=0;j<t.size();j++)
+            {
+                sum2+=(int)t[j];
+                mult*=(int)t[j];
+            }
+
+        if(sum1==sum2 && muls==mult)
+        return true;
+        return false;
+    }
+};
