@@ -1,0 +1,12 @@
+class Solution {
+public:
+    string getEncryptedString(string s, int k) {
+        string ans="";
+        for(int  c=0;c<s.size();c++)
+        {
+            int  a=(c+k)%s.size();
+            ans.push_back(s[a]);
+        }
+        return ans;
+    }
+};
