@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> getFinalState(vector<int>& nums, int k, int multiplier) {
+        
+      while(k--)
+        {
+            int n=nums[0];
+            int index=0;
+            for(int j=1;j<nums.size();j++)
+            {
+                if(n>nums[j])
+                {
+                    n=nums[j];
+                    index=j;
+                }
+            }
+            nums[index]*=multiplier;
+        }
+        return nums;
+    }
+};
