@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int countSegments(string s) {
+        stringstream ss(s);
+        string a;
+        vector<string>v;
+        while(ss>>a){
+            v.push_back(a);
+        }
+        return v.size();
+    }
+};
