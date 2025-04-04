@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int reverseDegree(string s) {
+    
+        map<char,int>mp;
+        int id=26;
+        for(char c='a';c<='z';c++)
+        {
+            mp[c]=id;
+            id--;
+        }
+        int idx=1,ans=0;
+        for(char ch:s){
+            if(mp.find(ch)!=mp.end()){
+              ans+=idx*mp[ch];
+                idx++;
+            }
+        }
+        return ans;
+    }
+};
