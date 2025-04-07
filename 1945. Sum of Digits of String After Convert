@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int getLucky(string s, int k) {
+        string no="";
+        for(char ch:s){
+            no+=to_string(ch-'a'+1);
+        }
+        while(k){
+            int temp=0;
+            for(char ch:no){
+                temp+=ch- '0';
+            }
+            no=to_string(temp);
+            k--;
+        }
+        return stoi(no);
+
+    }
+};
