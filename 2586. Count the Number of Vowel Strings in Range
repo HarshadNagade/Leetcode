@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int vowelStrings(vector<string>& words, int left, int right) {
+        int cnt=0;
+         unordered_set<char> st={'a','e', 'i','o', 'u'};
+        for(int i=left;i<right+1;i++){
+            string temp=words[i];
+            char c1=temp[0],c2=temp[temp.size()-1];
+
+            if(st.count(c1) && st.count(c2))
+            cnt++;
+        }
+        return cnt;
+    }
+};
