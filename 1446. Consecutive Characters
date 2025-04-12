@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maxPower(string s) {
+        int maxi=1,ans=1,size=s.size();
+        for(int i=1;i<size;i++){
+            if(s[i]==s[i-1]){
+                maxi++;
+            }
+            else{
+                maxi=1;
+            }
+            ans=max(ans,maxi);
+   
+        }
+        return ans;
+    }
+};
