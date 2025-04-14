@@ -1,0 +1,16 @@
+class Solution {
+public:
+    string findValidPair(string s) {
+       int v[10]{};
+        for( char c: s){
+            ++v[c-'0'];
+        }
+        for(int i=1;i<s.size();i++){
+                 int a=s[i-1]-'0';
+                 int b=s[i] -'0';
+                if(a!=b &&v[a]==a && v[b]==b)
+                 return s.substr(i-1,2);
+        }
+        return "";
+    }
+};
