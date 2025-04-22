@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int rearrangeCharacters(string s, string target) {g
+        vector<int> f(128),st(128);
+        for(char c:s){
+            ++f[c];
+        }
+        for(char c:target){
+            ++st[c];
+        }
+        int ans=INT_MAX;
+        for( char c: target){
+            if(st[c]>0){
+            int maxp=f[c]/st[c];
+            ans=min(ans,maxp);
+        }
+        }
+            return ans;
+        
+    }
+};
