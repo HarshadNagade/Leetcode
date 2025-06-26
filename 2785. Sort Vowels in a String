@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string sortVowels(string s) {
+        vector<int>asc;
+        string ans="";
+        unordered_set<char> vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+
+        for(char i:s){
+            if(vowels.count(i))
+                asc.push_back(int(i));
+        }
+
+        sort(asc.begin(),asc.end());
+        int ind=0;
+        for(char c:s){
+            if(vowels.count(c))
+                ans+=static_cast<char>(asc[ind++]);
+            else
+                ans+=c;
+        }
+        return ans;
+            
+    }
+};
