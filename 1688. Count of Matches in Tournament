@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int numberOfMatches(int n) {
+        int total=0;
+        int m,a;
+        while(n!=1){
+            if(n%2!=0){
+                m=(n-1)/2;
+                n=m+1;
+            }
+            else{
+                m=(n/2);
+                n/=2;
+            }
+            total+=m;
+
+        }
+        return total;
+    }
+};
