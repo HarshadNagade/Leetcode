@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool areOccurrencesEqual(string s) {
+     unordered_map<char,int>mp;
+     for(auto x:s){
+        mp[x]++;
+     }
+     int check=mp[s[0]];
+     for(auto i :mp){
+        if(check!=i.second)
+            return 0;
+     } 
+     return 1;
+    }
+};
