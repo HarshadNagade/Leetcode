@@ -1,0 +1,31 @@
+class Solution {
+public:
+    bool areNumbersAscending(string s) {
+        int n=s.size();
+        bool asc=true;
+        int mini=INT_MIN;
+        string no;
+
+        for(int i=0;i<n;i++){
+            
+            if(isdigit(s[i])){
+                no+=s[i];
+                if(isdigit(s[i+1])){
+                    no+=s[i+1];
+                    i++;
+                }
+            int temp=stoi(no);
+
+            if(temp<=mini){
+                asc=false;
+                break;
+            }
+            else {
+                mini=temp;
+                no.clear();
+            }
+            }
+        }
+        return asc;
+    }  
+};  
