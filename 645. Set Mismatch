@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        vector<int>v;
+        int n=nums.size();
+        int sum=accumulate(nums.begin(),nums.end(),0);
+        int addi=n*(n+1)/2;
+        int diff=addi-sum;
+        unordered_map<int,int>mp;
+        for(auto i:nums)
+            mp[i]++;
+        for(auto &i:mp){
+            if(i.second==2)
+                v.push_back(i.first);
+        }
+        int x=sum-v[0];
+        v.push_back(addi-x);
+        return v;
+    }
+};
